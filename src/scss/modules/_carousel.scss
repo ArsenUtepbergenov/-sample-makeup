@@ -1,0 +1,50 @@
+.carousel {
+  width: 165px;
+  height: 190px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  position: relative;
+  perspective: 500px;
+  transform-style: preserve-3d;
+
+  &-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    transition: transform 1s;
+  }
+
+  &-button-left, &-button-right {
+    position: absolute;
+    bottom: -45%;
+  }
+
+  &-button-left:hover, &-button-right:hover {
+    background-color: $color-lightblue;
+  }
+
+  &-button-left {
+    left: -20%;
+  }
+
+  &-button-right {
+    right: -20%;
+  }
+
+  @media screen and (min-width: $tablet - 1) {
+    width: 350px;
+    perspective: 1000px;
+    height: 220px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    width: 450px;
+    height: 260px;
+
+    .carousel-button-left, .carousel-button-right {
+      bottom: -52%;
+    }
+  }
+}

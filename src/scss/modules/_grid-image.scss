@@ -1,0 +1,33 @@
+.grid-image {
+  @include flexbox($secondaryAxis: stretch, $wrap: wrap);
+
+  &-column {
+    flex: 100%;
+    max-width: 100%;
+
+    .grid-images {
+      @include flexbox(column);
+      height: 100%;
+
+      img {
+        height: auto;
+        flex-grow: 1;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    &-column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+
+  @media screen and (min-width: $laptop) {
+    &-column {
+      flex: 25%;
+      max-width: 25%;
+    }
+  }
+}

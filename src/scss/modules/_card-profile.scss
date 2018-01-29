@@ -1,0 +1,49 @@
+.card-profile {
+  width: $card-profile-height;
+  height: $card-profile-width;
+  @include background-image('../assets/default-s.jpeg');
+  margin: 10px 0;
+  position: relative;
+
+  &-content {
+    height: 100%;
+    @include flexbox(column, flex-end);
+  }
+
+  &-face {
+    width: $card-profile-face-width;
+    height: $card-profile-face-height;
+    filter: grayscale(20%);
+  }
+
+  &-info {
+    width: 100%;
+    @include flexbox($mainAxis: space-around);
+    height: $card-profile-info-height;
+    background-color: $color-modal;
+  }
+}
+
+.card-profile.architector {
+  @include background-image('../assets/build-s.jpeg');
+
+  .card-profile-content .card-title, .card-profile-info {
+    background-color: $color-card-architector;
+  }
+
+  .card-profile-button:hover {
+    background-color: $color-card-architector-hover;
+  }
+}
+
+.card-profile.programmer {
+  @include background-image('../assets/code-s.jpeg');
+
+  .card-profile-content .card-title, .card-profile-info {
+    background-color: $color-card-programmer;
+  }
+
+  .card-profile-button:hover {
+    background-color: $color-card-programmer-hover;
+  }
+}

@@ -1,0 +1,51 @@
+.layout {
+  display: grid;
+  grid-template-areas: "header"
+                       "main"
+                       "footer";
+  grid-template-rows: $s-header-height 1fr $s-footer-height;
+  grid-template-columns: 1fr;
+
+  .header {
+    grid-area: header;
+    @include background-image('../assets/bg-header.jpeg');
+    position: relative;
+  }
+
+  .main {
+    grid-area: main;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+  
+  @media screen and (min-width: $mobile) {
+    grid-template-rows: $m-header-height 1fr $s-footer-height;
+  }
+
+  @media screen and (min-width: $tablet) {
+    grid-template-rows: $l-header-height 1fr $s-footer-height;
+  }
+}
+
+.parallax {
+  @include background-image('../assets/bg-main.jpeg');
+  background-attachment: fixed;
+  opacity: 0.7;
+}
+
+.parallax.parallax-arts {
+  height: $height-parallax;
+  background-position: top;
+}
+
+.parallax.parallax-about-us {
+  height: $height-parallax;
+  background-position: center;
+}
+
+.parallax.parallax-contacts {
+  height: $height-parallax;
+  background-position: bottom;
+}

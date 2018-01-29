@@ -1,0 +1,17 @@
+.footer {
+  background-color: $color-section;
+
+  .blockquote {
+    max-width: 240px;
+  }
+
+  .cite-author {
+    text-align: end;
+  }
+
+  @media screen and (max-width: $tablet) {
+    .blockquote {
+      margin: auto;
+    }
+  }
+}

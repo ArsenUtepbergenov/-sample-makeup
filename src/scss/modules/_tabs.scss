@@ -1,0 +1,55 @@
+.tabs {
+  &-links {
+    overflow: hidden;
+    @include flexbox($mainAxis: flex-start);
+  }
+
+  &-content {
+    padding: 15px 0;
+    border-bottom: 3px solid $color-white;
+
+    .tabs-content-item {
+      display: none;
+    }
+
+    .tabs-content-slideshow {
+      height: 400px;
+    }
+
+    .tabs-content-item.show {
+      display: block;
+    }
+  }
+
+  &-links, .tab {
+    background-color: $color-lightblue;
+  }
+
+  .tab {
+    border: none;
+    border-top: 3px solid $color-lightblue;
+    border-bottom: 3px solid $color-lightblue;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+
+  .tab.active {
+    border-top-color: $color-white;
+  }
+
+  .tab:hover {
+    border-top-color: $color-white;
+  }
+
+  @media screen and (min-width: $tablet - 1) {
+    .tabs-content .tabs-content-slideshow {
+      height: 420px;
+    }
+  }
+
+  @media screen and (min-width: $laptop) {
+    .tabs-content .tabs-content-slideshow {
+      height: 550px;
+    }
+  }
+}

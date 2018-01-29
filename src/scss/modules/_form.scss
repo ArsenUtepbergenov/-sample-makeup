@@ -1,0 +1,31 @@
+.form {
+  height: 100%;
+  @include flexbox(column, space-evenly, stretch);
+
+  &-textarea {
+    height: $s-height-textarea;
+    resize: none;
+  }
+
+  &-input, &-textarea {
+    border: none;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  &-button {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 0;
+    text-transform: uppercase;
+    background-color: $color-lightblue;
+  }
+
+  &-button:hover {
+    background-color: $color-orange;
+  }
+
+  @media screen and (min-width: $tablet) {
+    justify-content: space-between;
+  }
+}

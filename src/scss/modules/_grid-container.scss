@@ -1,0 +1,14 @@
+.grid-container {
+  display: grid;
+  grid-template: repeat(4, 1fr) / repeat(1, 1fr);
+  grid-gap: 15px;
+  grid-auto-flow: row dense;
+
+  @media screen and (min-width: $tablet) {
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: $laptop) {
+    grid-template: repeat(1, 1fr) / repeat(4, 1fr);
+  }
+}

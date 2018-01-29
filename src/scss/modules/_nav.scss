@@ -1,0 +1,28 @@
+.nav {
+  position: absolute;
+
+  &-content {
+    border-bottom: 5px solid $color-green;
+    box-sizing: border-box;
+
+    .nav-content-item {
+      color: $color-white;
+      font-size: 2em;
+      padding: 5px 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .nav-content-item:hover {
+      text-decoration: underline $color-green;
+    }
+  }
+}
+
+.nav.show {
+  width: 100%;
+
+  .nav-content {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="128x128">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/bundle.css">
+  <title>Sample site</title>
+</head>
+<body>
+  <div class="layout">
+    <!-- Header -->
+    <header class="header">
+      <a href="javascript:void(0)" class="header-nav-bars" onclick="toggleNavbar()">
+        <i class="fas fa-bars fa-2x"></i>
+      </a>
+      <!-- Navigation -->
+      <nav class="modal nav">
+        <a href="javascript:void(0)" class="modal-close" onclick="toggleNavbar()">
+          &times;
+        </a>
+        <div class="modal-content nav-content">
+          <a href="#" class="nav-content-item">Home</a>
+          <a href="#about-us" class="nav-content-item">About us</a>
+          <a href="#contacts" class="nav-content-item">Contacts</a>
+        </div>
+      </nav>
+      <div class="header-title-wrapper">
+        <div class="header-title-bg">
+          <img class="logo" src="/assets/logo.png" alt="Logo">
+          <h1 class="header-title">Sample site</h1>
+        </div>
+      </div>
+    </header>
+    <!-- Main -->
+    <main class="main">
+      <!-- Arts -->
+      <section class="section arts" id="arts">
+        <h2 class="section-title">Arts</h2>
+        <div class="tabs">
+          <div class="tabs-links" onclick="showTab(event)">
+            <button class="button tab" type="button" name="gallery">Gallery</button>
+            <button class="button tab" type="button" name="slideshow">Slideshow</button>
+            <button class="button tab" type="button" name="masonry">Masonry</button>
+          </div>
+          <div class="tabs-content">
+            <!-- Gallery -->
+            <div id="gallery" class="tabs-content-item" onclick="showImageModal(event)">
+              <div class="grid-container">
+                <div class="card-art">
+                  <img src="/assets/art1.jpeg" alt="Lake">
+                  <h3 class="card-title card-text">Lake</h3>
+                </div>
+                <div class="card-art">
+                  <img src="/assets/art2.jpeg" alt="Cup of tea">
+                  <h3 class="card-title card-text">Cup of tea</h3>
+                </div>
+                <div class="card-art">
+                  <img src="/assets/photo2.jpeg" alt="River">
+                  <h3 class="card-title card-text">River</h3>
+                </div>
+                <div class="card-art">
+                  <img src="/assets/art4.jpeg" alt="Cat">
+                  <h3 class="card-title card-text">Cat</h3>
+                </div>
+              </div>
+            </div>
+            <!-- Slideshow -->
+            <div id="slideshow" class="tabs-content-item tabs-content-slideshow">
+              <div class="carousel">
+                <div class="carousel-item"><img src="/assets/art4.jpeg" alt="Cat"></div>
+                <div class="carousel-item"><img src="/assets/photo2.jpeg" alt="River"></div>
+                <div class="carousel-item"><img src="/assets/photo1.jpeg" alt="Sea"></div>
+                <div class="carousel-item"><img src="/assets/photo4.jpeg" alt="Books"></div>
+                <div class="carousel-item"><img src="/assets/art2.jpeg" alt="Cup of tea"></div>
+                <div class="carousel-item"><img src="/assets/photo3.jpeg" alt="Mountain"></div>
+                <button class="button carousel-button-left" onclick="rotate(1)" type="button">
+                  <i class="fas fa-angle-left"></i>
+                </button>
+                <button class="button carousel-button-right" onclick="rotate(-1)" type="button">
+                  <i class="fas fa-angle-right"></i>
+                </button>
+              </div>
+            </div>
+            <!-- Masonry -->
+            <div id="masonry" class="tabs-content-item">
+              <div class="grid-image">
+                <div class="grid-image-column">
+                  <div class="grid-images">
+                    <img src="/assets/photo1.jpeg" alt="Sea">
+                    <img src="/assets/photo2.jpeg" alt="River">
+                    <img src="/assets/art2.jpeg" alt="Cup of tea">
+                  </div>
+                </div>
+                <div class="grid-image-column">
+                  <div class="grid-images">
+                    <img src="/assets/photo4.jpeg" alt="Books">
+                    <img src="/assets/art4.jpeg" alt="Cat">
+                  </div>
+                </div>
+                <div class="grid-image-column">
+                  <div class="grid-images">
+                    <img src="/assets/photo3.jpeg" alt="Mountain">
+                    <img src="/assets/art1.jpeg" alt="Lake">
+                  </div>
+                </div>
+                <div class="grid-image-column">
+                  <div class="grid-images">
+                    <img src="/assets/art3.jpeg" alt="Road">
+                    <img src="/assets/photo2.jpeg" alt="River">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal for the gallery -->
+        <div id="modal" class="modal">
+          <a href="javascript:void(0)" class="modal-close" onclick="toggleImageModal()">&times;</a>
+          <div class="modal-content">
+            <img id="modal-image" class="modal-image">
+            <div id="modal-caption" class="modal-image-caption"></div>
+          </div>
+        </div>
+      </section>
+      <div class="parallax parallax-arts"></div>
+      <!-- About us -->
+      <section class="section about-us" id="about-us">
+        <h2 class="section-title">About us</h2>
+
+        <div class="about-us-content">
+
+          <div class="card-profile architector">
+            <div class="card-profile-content">
+              <p class="card-title card-text">Architector</p>
+              <div class="card-profile-face">
+                <img src="/assets/architector-face.png" alt="Architector">
+              </div>
+              <div class="card-profile-info">
+                <div>
+                  <p class="card-text-bold">Frodo Baggins</p>
+                </div>
+                <button class="button-circle-icon card-profile-button" type="button">
+                  <i class="far fa-user"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-profile programmer">
+            <div class="card-profile-content">
+              <p class="card-title card-text">Programmer</p>
+              <div class="card-profile-face">
+                <img src="/assets/programmer-face.png" alt="Programmer">
+              </div>
+              <div class="card-profile-info">
+                <div>
+                  <p class="card-text-bold">Nazgul</p>
+                </div>
+                <button class="button-circle-icon card-profile-button" type="button">
+                  <i class="far fa-user"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <div class="parallax parallax-about-us"></div>
+      <!-- Contacts -->
+      <section class="section contacts" id="contacts">
+        <h2 class="section-title">Contacts</h2>
+
+        <div class="contacts-content">
+
+          <div class="contacts-content-map">
+            <div class="map" id="map"></div>
+          </div>
+
+          <div class="contacts-content-send-message">
+            <form class="form">
+              <input class="form-input" type="text" name="name" placeholder="Name" required>
+              <input class="form-input" type="email" name="email" placeholder="Email" required>
+              <textarea class="form-textarea" placeholder="Your message..." required></textarea>
+              <button class="button form-button card-text" type="submit">Send</button>
+            </form>
+          </div>
+
+        </div>
+      </section>
+      <div class="parallax parallax-contacts"></div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <blockquote class="blockquote" cite="http://uaforizm.com/aforizmy-i-citaty-pro-nauku-i-ee-deyatelej.html">
+        <i class="fas fa-quote-left fa-pull-left fa-border"></i>
+        <p>Нельзя быть настоящим математиком, не будучи немного поэтом.</p>
+        <p class="cite-author"><cite>К. Вейерштрасс</cite></p>
+      </blockquote>
+    </footer>
+    <!-- Button to top site -->
+    <button class="button-circle-icon button-to-up" type="button" onclick="toUpSite()">
+      <i class="fas fa-angle-up"></i>
+    </button>
+  </div>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+  <script src="./js/scripts.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRHNA7p1ipb4pQSZh_TdoYj35--BfCBrk&callback=initMap" async defer></script>
+</body>
+</html>

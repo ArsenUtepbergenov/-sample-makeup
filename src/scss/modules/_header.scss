@@ -1,0 +1,51 @@
+.header {
+  &-title-wrapper {
+    height: 100%;
+    width: 100%;
+    @include flexbox();
+
+    .logo {
+      max-width: 80px;
+      max-height: 80px;
+    }
+
+    .header-title-bg {
+      @include flexbox();
+      @include border-solid(3px, $color-white, 15px);
+      box-sizing: border-box;
+      padding: 5px;
+    }
+
+    .header-title {
+      text-align: center;
+    }
+  }
+
+  .header-nav-bars {
+    color: $color-white;
+    left: 12px;
+    top: 8px;
+    position: absolute;
+  }
+
+  .active {
+    visibility: hidden;
+  }
+
+  @media screen and (min-width: $tablet) {
+    &-title-wrapper .header-title {
+      font-size: 3em;
+    }
+  }
+
+  @media screen and (min-width: $laptop) {
+    &-title-wrapper .header-title {
+      font-size: 4em;
+    }
+
+    &-title-wrapper .logo {
+      max-width: 100px;
+      max-height: 100px;
+    }
+  }
+}

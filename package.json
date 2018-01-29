@@ -1,0 +1,17 @@
+{
+  "name": "-sample-makeup",
+  "version": "1.0.0",
+  "description": "sample makeup page",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "arsen",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-sass": "^3.1.0"
+  }
+}

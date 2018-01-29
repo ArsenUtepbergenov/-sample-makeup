@@ -1,0 +1,38 @@
+.button-template {
+  background: none;
+  transition: all 0.3s ease;
+  @include border-solid(2px, $color-white, 10px);
+  color: $color-white;
+}
+
+.button {
+  @extend .button-template;
+  padding: 7px 16px;
+}
+
+.button-circle-icon {
+  @extend .button-template;
+  height: 60px;
+  width: 60px;
+  font-size: 1.6em;
+  border-radius: 50%;
+}
+
+.button-to-up {
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  right: 20px;
+  bottom: 20px;
+  background-color: $color-lightblue;
+  border: none;
+  z-index: 2;
+}
+
+.button:hover, .button-circle-icon:hover {
+  background-color: #3c3c3c;
+}
+
+.button-to-up:hover {
+  background-color: $color-orange;
+}

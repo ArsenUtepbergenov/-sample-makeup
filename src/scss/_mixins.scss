@@ -1,0 +1,28 @@
+@mixin flexbox($direction: row, $mainAxis: center, $secondaryAxis: center, $wrap: nowrap) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  justify-content: $mainAxis;
+  align-items: $secondaryAxis;
+}
+
+@mixin border-solid($size, $color, $radius: 0) {
+  border: $size solid $color;
+  border-radius: $radius;
+}
+
+@mixin border-radius-t($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border-radius-b($radius) {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@mixin background-image($image, $size: cover, $position: center, $repeat: no-repeat) {
+  background-image: url($image);
+  background-repeat: $repeat;
+  background-size: $size;
+  background-position: $position;
+}
