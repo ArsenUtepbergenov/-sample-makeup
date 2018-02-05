@@ -9,12 +9,12 @@ const paths = {
   index: ['public/index.html']
 };
 
-gulp.task('copy-js', function () {
+gulp.task('copy-js', function() {
   return gulp.src(paths.scripts)
     .pipe(gulp.dest('public/js/'));
 });
 
-gulp.task('js-watch', ['copy-js'], function (done) {
+gulp.task('js-watch', ['copy-js'], function(done) {
   browserSync.reload();
   done();
 });
@@ -29,13 +29,13 @@ gulp.task('sass', function() {
 
 gulp.task('dev', ['sass'], function() {
 
-    browserSync.init({
-        server: 'public/'
-    });
+  browserSync.init({
+    server: 'public/'
+  });
 
-    gulp.watch(paths.styles, ['sass']);
-    gulp.watch(paths.scripts, ['js-watch']);
-    gulp.watch(paths.index).on('change', browserSync.reload);
+  gulp.watch(paths.styles, ['sass']);
+  gulp.watch(paths.scripts, ['js-watch']);
+  gulp.watch(paths.index).on('change', browserSync.reload);
 });
 
 gulp.task('watch', function() {

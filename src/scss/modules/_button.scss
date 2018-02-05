@@ -1,6 +1,5 @@
 .button-template {
   background: none;
-  transition: all 0.3s ease;
   @include border-solid(2px, $color-white, 10px);
   color: $color-white;
 }
