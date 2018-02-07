@@ -1,0 +1,28 @@
+.article {
+  background-color: $color-purple;
+  padding: 15px;
+
+  &-title {
+    text-align: center;
+  }
+
+  &-text {
+    text-indent: 2em;
+    line-height: 1.4em;
+    letter-spacing: 1px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    &-text {
+      columns: 2;
+      column-rule: 1px solid $color-white;
+      column-gap: 40px;
+    }
+  }
+
+  @media screen and (min-width: $large) {
+    &-text {
+      columns: 3;
+    }
+  }
+}

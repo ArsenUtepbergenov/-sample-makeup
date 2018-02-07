@@ -23,7 +23,8 @@
           &times;
         </a>
         <div class="modal-content nav-content">
-          <a href="#" class="nav-content-item">Home</a>
+          <a href="#arts" class="nav-content-item">Arts</a>
+          <a href="#articles" class="nav-content-item">Articles</a>
           <a href="#about-us" class="nav-content-item">About us</a>
           <a href="#contacts" class="nav-content-item">Contacts</a>
         </div>
@@ -40,12 +41,14 @@
       <!-- Arts -->
       <section class="section arts" id="arts">
         <h2 class="section-title">Arts</h2>
+
         <div class="search-field">
           <input class="search-field-input" type="search" placeholder="Search art..." autofocus required>
           <button class="search-field-button" type="button">
             <i class="fas fa-search"></i>
           </button>
         </div>
+        <!-- Tabs -->
         <div class="tabs">
           <div class="tabs-links" onclick="showTab(event)">
             <button class="button tab" type="button" name="gallery">Gallery</button>
@@ -133,12 +136,31 @@
         </div>
       </section>
       <div class="parallax parallax-arts"></div>
+      <!-- Articles -->
+      <section class="section articles" id="articles">
+        <h2 class="section-title">Articles</h2>
+        <article class="article">
+          <h3 class="article-title">Abstract</h3>
+          <p class="article-text">
+            Honey bees are increasingly important in the pollination of crops and wild plants. Recent reports of the weakening and periodical high losses of managed honey bee colonies have alarmed beekeeper, farmers and scientists. Infestations with the ectoparasitic mite Varroa destructor in combination with its associated viruses have been identified as a crucial driver of these health problems. Although yearly treatments are required to prevent collapses of honey bee colonies, the number of effective acaricides is small and no new active compounds have been registered in the past 25 years. RNAi-based methods were proposed recently as a promising new tool. However, the application of these methods according to published protocols has led to a surprising discovery. Here, we show that the lithium chloride that was used to precipitate RNA and other lithium compounds is highly effective at killing Varroa mites when fed to host bees at low millimolar concentrations. Experiments with caged bees and brood-free artificial swarms consisting of a queen and several thousand bees clearly demonstrate the potential of lithium as miticidal agent with good tolerability in worker bees providing a promising basis for the development of an effective and easy-to-apply control method for mite treatment.
+          </p>
+        </article>
+        <div class="pagination">
+          <a class="pagination-item"><i class="fas fa-angle-double-left"></i></a>
+          <a class="pagination-item"><i class="fas fa-angle-left"></i></a>
+          <a class="pagination-item pagination-item-active">1</a>
+          <a class="pagination-item">2</a>
+          <a class="pagination-item">3</a>
+          <a class="pagination-item"><i class="fas fa-angle-right"></i></a>
+          <a class="pagination-item"><i class="fas fa-angle-double-right"></i></a>
+        </div>
+      </section>
+      <div class="parallax parallax-articles"></div>
       <!-- About us -->
       <section class="section about-us" id="about-us">
         <h2 class="section-title">About us</h2>
 
         <div class="about-us-content">
-
           <div class="card-profile architector">
             <div class="card-profile-content">
               <p class="card-title card-text">Architector</p>
@@ -179,7 +201,6 @@
       <!-- Contacts -->
       <section class="section contacts" id="contacts">
         <h2 class="section-title">Contacts</h2>
-
         <div class="contacts-content">
 
           <div class="contacts-content-map">

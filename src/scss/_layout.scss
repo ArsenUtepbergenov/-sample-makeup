@@ -19,7 +19,7 @@
   .footer {
     grid-area: footer;
   }
-  
+
   @media screen and (min-width: $mobile) {
     grid-template-rows: $m-header-height 1fr $s-footer-height;
   }
@@ -38,6 +38,11 @@
 .parallax.parallax-arts {
   height: $height-parallax;
   background-position: top;
+}
+
+.parallax.parallax-articles {
+  height: $height-parallax;
+  background-position: center;
 }
 
 .parallax.parallax-about-us {
