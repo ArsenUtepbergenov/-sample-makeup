@@ -1,49 +1,75 @@
 .card-profile {
-  width: $card-profile-height;
-  height: $card-profile-width;
+  width: $card-profile-size;
+  height: $card-profile-size;
+  border-radius: 50%;
+  overflow: hidden;
   @include background-image('../assets/default-s.jpeg');
   margin: 10px 0;
   position: relative;
-
-  &-content {
-    height: 100%;
-    @include flexbox(column, flex-end);
-  }
+  border: 3px solid $color-white;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
 
   &-face {
     width: $card-profile-face-width;
     height: $card-profile-face-height;
-    filter: grayscale(20%);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateX(($card-profile-size - $card-profile-face-width) / 2);
   }
 
   &-info {
-    width: 100%;
-    @include flexbox($mainAxis: space-around);
-    height: $card-profile-info-height;
+    padding: 5px 0;
+    height: 25%;
+    box-sizing: border-box;
     background-color: $color-modal;
   }
+
+  &-link {
+    padding: 15px;
+    font-size: 1.5em;
+    color: $color-white;
+  }
+
+  &-link:hover {
+    color: $color-green;
+  }
+
+  &-text {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    line-height: 1.5em;
+  }
+
+  &-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-modal;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: height 0.3s ease-out;
+  }
+
+  &-overlay-content {
+    @include flexbox($mainAxis: space-evenly);
+    height: 100%;
+  }
+}
+
+.card-profile:hover .card-profile-overlay {
+  height: 75%;
 }
 
 .card-profile.architector {
   @include background-image('../assets/build-s.jpeg');
-
-  .card-profile-content .card-title, .card-profile-info {
-    background-color: $color-card-architector;
-  }
-
-  .card-profile-button:hover {
-    background-color: $color-card-architector-hover;
-  }
 }
 
 .card-profile.programmer {
   @include background-image('../assets/code-s.jpeg');
-
-  .card-profile-content .card-title, .card-profile-info {
-    background-color: $color-card-programmer;
-  }
-
-  .card-profile-button:hover {
-    background-color: $color-card-programmer-hover;
-  }
 }

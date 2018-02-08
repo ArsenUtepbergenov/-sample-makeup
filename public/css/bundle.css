@@ -439,38 +439,77 @@
 }
 
 .card-profile {
-  width: 220px;
-  height: 300px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
   background-image: url("../assets/default-s.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   margin: 10px 0;
   position: relative;
-}
-
-.card-profile-content {
-  height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-end;
-  align-items: center;
+  border: 3px solid #ffffff;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
 }
 
 .card-profile-face {
-  width: 170px;
-  height: 45%;
-  filter: grayscale(20%);
+  width: 180px;
+  height: 60%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateX(30px);
 }
 
 .card-profile-info {
+  padding: 5px 0;
+  height: 25%;
+  box-sizing: border-box;
+  background-color: rgba(17, 17, 17, 0.7);
+}
+
+.card-profile-link {
+  padding: 15px;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+.card-profile-link:hover {
+  color: #81bd3c;
+}
+
+.card-profile-text {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  line-height: 1.5em;
+}
+
+.card-profile-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(17, 17, 17, 0.7);
+  overflow: hidden;
   width: 100%;
+  height: 0;
+  transition: height 0.3s ease-out;
+}
+
+.card-profile-overlay-content {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  height: 30%;
-  background-color: rgba(17, 17, 17, 0.7);
+  height: 100%;
+}
+
+.card-profile:hover .card-profile-overlay {
+  height: 75%;
 }
 
 .card-profile.architector {
@@ -480,29 +519,11 @@
   background-position: center;
 }
 
-.card-profile.architector .card-profile-content .card-title,
-.card-profile.architector .card-profile-info {
-  background-color: rgba(76, 66, 95, 0.7);
-}
-
-.card-profile.architector .card-profile-button:hover {
-  background-color: #5f4d7b;
-}
-
 .card-profile.programmer {
   background-image: url("../assets/code-s.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
-
-.card-profile.programmer .card-profile-content .card-title,
-.card-profile.programmer .card-profile-info {
-  background-color: rgba(162, 58, 58, 0.7);
-}
-
-.card-profile.programmer .card-profile-button:hover {
-  background-color: #c73126;
 }
 
 .card-art {
@@ -749,6 +770,7 @@
 
 .pagination-item {
   padding: 10px 18px;
+  user-select: none;
 }
 
 .pagination-item:hover {
