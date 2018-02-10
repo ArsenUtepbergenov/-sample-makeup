@@ -8,20 +8,15 @@
     border-radius: 4px;
     padding: $padding-input;
     width: 100%;
+    padding-left: 42px;
   }
 
-  &-button {
+  &-icon {
     position: absolute;
-    background: none;
-    border: none;
-    padding: $padding-input;
-    right: 0;
+    left: 0;
     top: 0;
-    color: $color-section;
-  }
-
-  &-button:hover {
-    color: $color-orange;
+    padding: 13px;
+    color: $color-darkgrey;
   }
 
   @media screen and (min-width: $tablet) {

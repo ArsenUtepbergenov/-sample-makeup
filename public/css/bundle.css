@@ -477,8 +477,16 @@
   color: #ffffff;
 }
 
-.card-profile-link:hover {
-  color: #81bd3c;
+.card-profile-link.twitter:hover {
+  color: #55ACEE;
+}
+
+.card-profile-link.youtube:hover {
+  color: #cc181e;
+}
+
+.card-profile-link.facebook:hover {
+  color: #3B5998;
 }
 
 .card-profile-text {
@@ -738,20 +746,15 @@
   border-radius: 4px;
   padding: 12px;
   width: 100%;
+  padding-left: 42px;
 }
 
-.search-field-button {
+.search-field-icon {
   position: absolute;
-  background: none;
-  border: none;
-  padding: 12px;
-  right: 0;
+  left: 0;
   top: 0;
-  color: #282E34;
-}
-
-.search-field-button:hover {
-  color: #ff7d4d;
+  padding: 13px;
+  color: #8b8b8c;
 }
 
 @media screen and (min-width: 769px) {

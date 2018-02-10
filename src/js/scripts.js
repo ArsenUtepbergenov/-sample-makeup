@@ -1,7 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
   window.onscroll = () => showButtonToUpSite();
+  const defaultTab = document.getElementsByName('gallery')[0];
+  addStyle(defaultTab, 'active');
+  showTabContent(defaultTab.name);
   initArticlesWithPagination();
 });
+
+// Filter(search) arts
+function searchArt() {
+  const input = document.getElementById('search-art');
+  const filter = input.value.toUpperCase();
+
+  const cards = document.querySelectorAll('.card-art');
+  const titles = document.querySelectorAll('.card-title');
+
+  const length = titles.length;
+
+  for (let i = 0; i < length; i++) {
+    let tempTitle = titles[i];
+    if (tempTitle.innerText.toUpperCase().indexOf(filter) > -1)
+      cards[i].style.display = "";
+    else
+      cards[i].style.display = "none";
+  }
+}
 
 // Pagination
 const initArticlesWithPagination = async () => {
@@ -101,6 +123,7 @@ const fetchArticles = async () => {
     return data;
   } catch (error) {
     console.error(error);
+    return new Error('Failed fetch articles');
   }
 }
 
