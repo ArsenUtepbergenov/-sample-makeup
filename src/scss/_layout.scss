@@ -29,6 +29,10 @@
   }
 }
 
+.canvas {
+  position: absolute;
+}
+
 .parallax {
   @include background-image('../assets/bg-main.jpeg');
   background-attachment: fixed;

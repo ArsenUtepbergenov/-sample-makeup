@@ -1,10 +1,83 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   window.onscroll = () => showButtonToUpSite();
+
+  const canvas = document.getElementById('canvas');
+  const context = canvas.getContext('2d');
+  context.lineWidth = 1;
+  context.lineCap = 'round';
+  const header = document.querySelector('.header');
+  let width = canvas.width = header.offsetWidth;
+  let height = canvas.height = header.offsetHeight;
+  let particles = initRainEffect(width, height);
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = header.offsetWidth;
+    height = canvas.height = header.offsetHeight;
+    particles = initRainEffect(width, height);
+
+    initCarousel();
+  });
+
   const defaultTab = document.getElementsByName('gallery')[0];
   addStyle(defaultTab, 'active');
   showTabContent(defaultTab.name);
   initArticlesWithPagination();
+
+  const maxParticles = particles.length;
+
+  function draw() {
+    context.clearRect(0, 0, width, height);
+
+    for (let i = 0; i < maxParticles; i++) {
+      const temp = particles[i];
+      context.beginPath();
+      context.moveTo(temp.x, temp.y);
+      context.lineTo(temp.x + temp.l * temp.xs, temp.y + temp.l * temp.ys);
+      context.strokeStyle = 'rgba(236, 237, 225, 0.7)';
+      context.stroke();
+    }
+
+    moveParticles(particles, width, height);
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
 });
+
+// Rain effect (header)
+function initRainEffect(width, height) {
+  const maxParticles = 1000;
+
+  let particles = [];
+
+  for (let i = 0; i < maxParticles; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      l: Math.random() * 1,
+      xs: -4 + Math.random() * 4 + 2,
+      ys: Math.random() * 10 + 10
+    });
+  }
+
+  return particles;
+}
+
+function moveParticles(particles, width, height) {
+  const maxParticles = particles.length;
+
+  for (let i = 0; i < maxParticles; i++) {
+    let temp = particles[i];
+    temp.x += temp.xs;
+    temp.y += temp.ys;
+    if (temp.x > width || temp.y > height) {
+      temp.x = Math.random() * width;
+      temp.y = -20;
+    }
+  }
+}
 
 // Filter(search) arts
 function searchArt() {
@@ -119,7 +192,7 @@ function createArrowPagination(classA, classI) {
 
 const fetchArticles = async () => {
   try {
-    const data = await fetch('./js/articles.json').then(resolve => resolve.json());
+    const data = await fetch('./js/articles.json').then(response => response.json());
     return data;
   } catch (error) {
     console.error(error);

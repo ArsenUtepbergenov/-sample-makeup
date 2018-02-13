@@ -1,5 +1,6 @@
 .article {
   background-color: $color-purple;
+  box-sizing: border-box;
   padding: 15px;
 
   &-title {
